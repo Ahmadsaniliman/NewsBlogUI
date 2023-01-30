@@ -29,3 +29,35 @@ final List<Category> newCategory = [
     updates: '+ 34 updates',
   ),
 ];
+
+class NewsCategory {
+  final String image, image1, name, time, text, category;
+
+  NewsCategory({
+    required this.image,
+    required this.image1,
+    required this.name,
+    required this.time,
+    required this.text,
+    required this.category,
+  });
+}
+
+final List<NewsCategory> newsCategory = [
+  NewsCategory(
+    image: 'assets/images/Rectangle 17.png',
+    image1: 'assets/images/Rectangle 18.png',
+    name: 'Jesse James',
+    time: '08 min',
+    text: 'Art that swipes through the landscapes — Earthscape ...',
+    category: 'Art & Illustration',
+  ),
+  NewsCategory(
+    image: 'assets/images/Rectangle 17.png',
+    image1: 'assets/images/Rectangle 18.png',
+    name: 'Aman Sharma',
+    time: '12 min',
+    text: 'Jaipur: Arts in the Pink City and Learning to Write',
+    category: 'Art & Illustration',
+  ),
+];
