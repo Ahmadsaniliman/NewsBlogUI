@@ -256,9 +256,14 @@ class AppBar extends StatelessWidget {
   }
 }
 
-class AAAAAAAAAa extends StatelessWidget {
-  const AAAAAAAAAa({Key? key}) : super(key: key);
+class CCCCCCC extends StatefulWidget {
+  const CCCCCCC({Key? key}) : super(key: key);
 
+  @override
+  State<CCCCCCC> createState() => _CCCCCCCState();
+}
+
+class _CCCCCCCState extends State<CCCCCCC> {
   @override
   Widget build(BuildContext context) {
     return const Placeholder();
