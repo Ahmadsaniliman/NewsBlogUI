@@ -87,6 +87,15 @@ class HomePage extends StatelessWidget {
                   ),
                 ],
               ),
+              //
+              //
+              //
+              //
+              Container(
+                height: 130.0,
+                width: double.infinity,
+                color: Colors.green,
+              ),
             ],
           ),
         ),
@@ -253,28 +262,5 @@ class AppBar extends StatelessWidget {
         ),
       ],
     );
-  }
-}
-
-class MMMMMMMMMMM extends StatelessWidget {
-  const MMMMMMMMMMM({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
-  }
-}
-
-class CCCCCCC extends StatefulWidget {
-  const CCCCCCC({Key? key}) : super(key: key);
-
-  @override
-  State<CCCCCCC> createState() => _CCCCCCCState();
-}
-
-class _CCCCCCCState extends State<CCCCCCC> {
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
   }
 }
