@@ -7,9 +7,13 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // final Category category;
     const int index = 0;
     return Scaffold(
+      bottomNavigationBar: Container(
+        height: 50.0,
+        width: double.infinity,
+        color: color1,
+      ),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.only(
@@ -79,27 +83,132 @@ class HomePage extends StatelessWidget {
                         children: [
                           Image.asset('assets/images/image 9.png', width: 20.0),
                           const SizedBox(width: 10.0),
-                          const Text('Popular'),
+                          const Text(
+                            'Popular',
+                            style: TextStyle(
+                              fontSize: 20.0,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
                         ],
                       ),
-                      Image.asset('assets/images/Group 11.png', width: 20.0),
+                      Image.asset(
+                        'assets/images/Group 11.png',
+                        width: 120.0,
+                      ),
                     ],
                   ),
+                  //   const SizedBox(
+                  //     height: 15.0,
+                  //   ),
                 ],
               ),
               //
               //
               //
               //
-              Container(
-                height: 130.0,
-                width: double.infinity,
-                color: Colors.green,
+              SingleChildScrollView(
+                child: Column(
+                  children: [
+                    ...List.generate(
+                      newsCategory.length,
+                      (index) => SingleChildScrollView(
+                        child: NewsCardBelow(
+                          newsCategry: newsCategory[index],
+                        ),
+                      ),
+                    )
+                  ],
+                ),
               ),
             ],
           ),
         ),
       ),
+    );
+  }
+}
+
+class NewsCardBelow extends StatelessWidget {
+  const NewsCardBelow({
+    Key? key,
+    required this.newsCategry,
+  }) : super(key: key);
+
+  final NewsCategory newsCategry;
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Container(
+          padding: const EdgeInsets.only(
+            top: 25.0,
+            bottom: 10.0,
+            right: 6.0,
+          ),
+          height: 130.0,
+          width: double.infinity,
+          //   color: Colors.green,
+          child: Row(
+            children: [
+              Image.asset(
+                'assets/images/Rectangle 17.png',
+                //   width: 120,
+              ),
+              const SizedBox(width: 15.0),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Image.asset(
+                            'assets/images/Rectangle 18 (1).png',
+                            width: 20.0,
+                          ),
+                          const SizedBox(width: 5.0),
+                          const Text(
+                            'Jsess James',
+                            style: TextStyle(fontSize: 13.0),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(width: 60.0),
+                      const Text(
+                        '8 min',
+                        style: TextStyle(fontSize: 11.0),
+                      )
+                    ],
+                  ),
+                  //
+                  const Padding(
+                    padding: EdgeInsets.symmetric(vertical: 10.0),
+                    child: Text(
+                      'Art that swipes through\nthe landscapes — Earthscape ...',
+                      style: TextStyle(
+                        fontSize: 13.0,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  const Text(
+                    'Art & Illustration',
+                    style: TextStyle(fontSize: 13.0),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+        Container(
+          height: 2.0,
+          width: double.infinity,
+          color: color1,
+        ),
+      ],
     );
   }
 }
@@ -122,12 +231,12 @@ class _AllAndPopularState extends State<AllAndPopular> {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 20.0),
       child: Container(
-        padding: const EdgeInsets.all(10.0),
-        height: 60.0,
+        padding: const EdgeInsets.all(5.0),
+        height: 70.0,
         width: double.infinity,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10.0),
-          color: color1,
+          borderRadius: BorderRadius.circular(20.0),
+          color: color1.withOpacity(0.4),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -138,14 +247,16 @@ class _AllAndPopularState extends State<AllAndPopular> {
                   index == 0;
                 });
               },
-              child: Container(
+              child: const SizedBox(
                 height: 80.0,
-                width: 90.0,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15.0),
-                  color: widget.index == 1 ? Colors.white : Colors.black,
+                width: 120.0,
+                // decoration: BoxDecoration(
+                //   borderRadius: BorderRadius.circular(15.0),
+                //   color: widget.index == 1 ? Colors.white : Colors.black,
+                // ),
+                child: Center(
+                  child: Text('All'),
                 ),
-                child: const Text('All'),
               ),
             ),
             GestureDetector(
@@ -156,12 +267,14 @@ class _AllAndPopularState extends State<AllAndPopular> {
               },
               child: Container(
                 height: 80.0,
-                width: 90.0,
+                width: 140.0,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15.0),
+                  borderRadius: BorderRadius.circular(25.0),
                   color: widget.index == 0 ? Colors.white : Colors.black,
                 ),
-                child: const Text('Popular'),
+                child: const Center(
+                  child: Text('Popular'),
+                ),
               ),
             ),
           ],
