@@ -123,7 +123,7 @@ class _AllAndPopularState extends State<AllAndPopular> {
       padding: const EdgeInsets.symmetric(vertical: 20.0),
       child: Container(
         padding: const EdgeInsets.all(10.0),
-        height: 100.0,
+        height: 60.0,
         width: double.infinity,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10.0),
