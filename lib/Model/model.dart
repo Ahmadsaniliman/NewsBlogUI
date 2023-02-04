@@ -45,8 +45,8 @@ class NewsCategory {
 
 final List<NewsCategory> newsCategory = [
   NewsCategory(
-    image: 'assets/images/Rectangle 17.png',
-    image1: 'assets/images/Rectangle 18.png',
+    image: 'assets/images/Rectangle 17 (2).png',
+    image1: 'assets/images/Rectangle 18 (1).png',
     name: 'Jesse James',
     time: '08 min',
     text: 'Art that swipes through\nthe landscapes — Earthscape ...',
@@ -54,10 +54,10 @@ final List<NewsCategory> newsCategory = [
   ),
   NewsCategory(
     image: 'assets/images/Rectangle 17.png',
-    image1: 'assets/images/Rectangle 18.png',
+    image1: 'assets/images/Rectangle 18 (1).png',
     name: 'Aman Sharma',
     time: '12 min',
-    text: 'Jaipur: Arts in the Pink City and Learning to Write',
+    text: 'Jaipur: Arts in the Pink City\nand Learning to Write',
     category: 'Art & Illustration',
   ),
 ];

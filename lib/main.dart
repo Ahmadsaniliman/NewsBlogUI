@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:newsblogui/Constant/routes.dart';
 import 'package:newsblogui/UI/details.dart';
 import 'package:newsblogui/UI/home.dart';
 
@@ -11,11 +12,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'News UI',
-      theme: ThemeData(),
-      home: const DetailsScreen(),
-    );
+        debugShowCheckedModeBanner: false,
+        title: 'News UI',
+        theme: ThemeData(),
+        home: const HomePage(),
+        routes: {
+          homePageRoute: (context) => const HomePage(),
+          detailsPageRoute: (context) => const DetailsScreen(),
+        });
   }
 }
 

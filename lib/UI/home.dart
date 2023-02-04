@@ -31,94 +31,95 @@ class HomePage extends StatelessWidget {
             // horizontal: 15.0,
             top: 15.0, right: 15.0, left: 15.0,
           ),
-          child: Column(
-            children: [
-              const AppBar(),
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 20.0),
-                child: Column(
-                  children: [
-                    Row(
-                      children: [
-                        const Text('Welcome Back,  ',
-                            style: TextStyle(fontSize: 20.0)),
-                        const Text(
-                          'Liman ',
-                          style: TextStyle(
-                            fontSize: 20.0,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        Image.asset('assets/images/image 1.png', width: 20.0),
-                      ],
-                    ),
-                    const SizedBox(height: 7.0),
-                    Row(
-                      children: [
-                        const Text(
-                          "we've got some exciting news for you  ",
-                          style: TextStyle(
-                            fontSize: 10.0,
-                          ),
-                        ),
-                        Image.asset('assets/images/image 2.png', width: 20.0),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: [
-                    ...List.generate(
-                      newCategory.length,
-                      (index) => CategoryContainer(
-                        category: newCategory[index],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              //
-              //
-              const AllAndPopular(index: index),
-              //
-              Column(
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                const AppBar(),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 20.0),
+                  child: Column(
                     children: [
                       Row(
                         children: [
-                          Image.asset('assets/images/image 9.png', width: 20.0),
-                          const SizedBox(width: 10.0),
+                          const Text('Welcome Back,  ',
+                              style: TextStyle(fontSize: 20.0)),
                           const Text(
-                            'Popular',
+                            'Liman ',
                             style: TextStyle(
                               fontSize: 20.0,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
+                          Image.asset('assets/images/image 1.png', width: 20.0),
                         ],
                       ),
-                      Image.asset(
-                        'assets/images/Group 11.png',
-                        width: 120.0,
+                      const SizedBox(height: 7.0),
+                      Row(
+                        children: [
+                          const Text(
+                            "we've got some exciting news for you  ",
+                            style: TextStyle(
+                              fontSize: 10.0,
+                            ),
+                          ),
+                          Image.asset('assets/images/image 2.png', width: 20.0),
+                        ],
                       ),
                     ],
                   ),
-                  //   const SizedBox(
-                  //     height: 15.0,
-                  //   ),
-                ],
-              ),
-              //
-              //
-              //
-              //
-              SingleChildScrollView(
-                child: Column(
+                ),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      ...List.generate(
+                        newCategory.length,
+                        (index) => CategoryContainer(
+                          category: newCategory[index],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                //
+                //
+                const AllAndPopular(index: index),
+                //
+                Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
+                          children: [
+                            Image.asset('assets/images/image 9.png',
+                                width: 20.0),
+                            const SizedBox(width: 10.0),
+                            const Text(
+                              'Popular',
+                              style: TextStyle(
+                                fontSize: 20.0,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        ),
+                        Image.asset(
+                          'assets/images/Group 11.png',
+                          width: 120.0,
+                        ),
+                      ],
+                    ),
+                    //   const SizedBox(
+                    //     height: 15.0,
+                    //   ),
+                  ],
+                ),
+                //
+                //
+                //
+                //
+                Column(
                   children: [
                     ...List.generate(
                       newsCategory.length,
@@ -130,8 +131,8 @@ class HomePage extends StatelessWidget {
                     )
                   ],
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
@@ -148,82 +149,79 @@ class NewsCardBelow extends StatelessWidget {
   final NewsCategory newsCategry;
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: double.infinity,
-      child: SingleChildScrollView(
-        child: Column(
-          children: [
-            Container(
-              padding: const EdgeInsets.only(
-                top: 25.0,
-                bottom: 10.0,
-                right: 6.0,
-              ),
-              height: 130.0,
-              width: double.infinity,
-              //   color: Colors.green,
-              child: Row(
-                children: [
-                  Image.asset(
-                    newsCategry.image,
-                    //   width: 120,
-                  ),
-                  const SizedBox(width: 15.0),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Row(
-                            //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Image.asset(
-                                newsCategry.image1,
-                                width: 20.0,
-                              ),
-                              const SizedBox(width: 5.0),
-                              Text(
-                                newsCategry.name,
-                                style: const TextStyle(fontSize: 13.0),
-                              ),
-                            ],
-                          ),
-                          const SizedBox(width: 60.0),
-                          Text(
-                            newsCategry.time,
-                            style: const TextStyle(fontSize: 11.0),
-                          )
-                        ],
-                      ),
-                      //
-                      Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 10.0),
-                        child: Text(
-                          newsCategry.text,
-                          style: const TextStyle(
-                            fontSize: 13.0,
-                            fontWeight: FontWeight.bold,
-                          ),
+    return Column(
+      children: [
+        Container(
+          padding: const EdgeInsets.only(
+            top: 25.0,
+            bottom: 10.0,
+            right: 6.0,
+          ),
+          height: 130.0,
+          width: double.infinity,
+          //   color: Colors.green,
+          child: Expanded(
+            child: Row(
+              children: [
+                Image.asset(
+                  newsCategry.image,
+                  //   width: 120,
+                ),
+                const SizedBox(width: 15.0),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
+                          //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Image.asset(
+                              newsCategry.image1,
+                              width: 20.0,
+                            ),
+                            const SizedBox(width: 5.0),
+                            Text(
+                              newsCategry.name,
+                              style: const TextStyle(fontSize: 13.0),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(width: 55.0),
+                        Text(
+                          newsCategry.time,
+                          style: const TextStyle(fontSize: 11.0),
+                        )
+                      ],
+                    ),
+                    //
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 10.0),
+                      child: Text(
+                        newsCategry.text,
+                        style: const TextStyle(
+                          fontSize: 13.0,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
-                      Text(
-                        newsCategry.category,
-                        style: const TextStyle(fontSize: 13.0),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
+                    ),
+                    Text(
+                      newsCategry.category,
+                      style: const TextStyle(fontSize: 13.0),
+                    ),
+                  ],
+                ),
+              ],
             ),
-            Container(
-              height: 2.0,
-              width: double.infinity,
-              color: color1,
-            ),
-          ],
+          ),
         ),
-      ),
+        Container(
+          height: 2.0,
+          width: double.infinity,
+          color: color1,
+        ),
+      ],
     );
   }
 }
@@ -372,7 +370,6 @@ class AppBar extends StatelessWidget {
           width: 50.0,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10.0),
-            color: Colors.black45,
           ),
           child: Image.asset(
             'assets/images/Rectangle 7 (3).png',
@@ -385,7 +382,6 @@ class AppBar extends StatelessWidget {
           width: 50.0,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10.0),
-            color: Colors.black26,
           ),
           child: Image.asset(
             'assets/images/Vector (30).png',
