@@ -49,7 +49,7 @@ final List<NewsCategory> newsCategory = [
     image1: 'assets/images/Rectangle 18.png',
     name: 'Jesse James',
     time: '08 min',
-    text: 'Art that swipes through the landscapes — Earthscape ...',
+    text: 'Art that swipes through\nthe landscapes — Earthscape ...',
     category: 'Art & Illustration',
   ),
   NewsCategory(

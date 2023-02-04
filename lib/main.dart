@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:newsblogui/UI/details.dart';
 import 'package:newsblogui/UI/home.dart';
 
 void main() {
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'News UI',
       theme: ThemeData(),
-      home: const HomePage(),
+      home: const DetailsScreen(),
     );
   }
 }

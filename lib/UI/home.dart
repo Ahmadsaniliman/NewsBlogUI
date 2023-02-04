@@ -10,9 +10,19 @@ class HomePage extends StatelessWidget {
     const int index = 0;
     return Scaffold(
       bottomNavigationBar: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 20.0),
         height: 50.0,
         width: double.infinity,
         color: color1,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: const [
+            Icon(Icons.home),
+            Icon(Icons.favorite),
+            Icon(Icons.notifications),
+            Icon(Icons.person),
+          ],
+        ),
       ),
       body: SafeArea(
         child: Padding(
@@ -138,77 +148,82 @@ class NewsCardBelow extends StatelessWidget {
   final NewsCategory newsCategry;
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          padding: const EdgeInsets.only(
-            top: 25.0,
-            bottom: 10.0,
-            right: 6.0,
-          ),
-          height: 130.0,
-          width: double.infinity,
-          //   color: Colors.green,
-          child: Row(
-            children: [
-              Image.asset(
-                'assets/images/Rectangle 17.png',
-                //   width: 120,
+    return SizedBox(
+      width: double.infinity,
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            Container(
+              padding: const EdgeInsets.only(
+                top: 25.0,
+                bottom: 10.0,
+                right: 6.0,
               ),
-              const SizedBox(width: 15.0),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+              height: 130.0,
+              width: double.infinity,
+              //   color: Colors.green,
+              child: Row(
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  Image.asset(
+                    newsCategry.image,
+                    //   width: 120,
+                  ),
+                  const SizedBox(width: 15.0),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Row(
-                        //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Image.asset(
-                            'assets/images/Rectangle 18 (1).png',
-                            width: 20.0,
+                          Row(
+                            //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Image.asset(
+                                newsCategry.image1,
+                                width: 20.0,
+                              ),
+                              const SizedBox(width: 5.0),
+                              Text(
+                                newsCategry.name,
+                                style: const TextStyle(fontSize: 13.0),
+                              ),
+                            ],
                           ),
-                          const SizedBox(width: 5.0),
-                          const Text(
-                            'Jsess James',
-                            style: TextStyle(fontSize: 13.0),
-                          ),
+                          const SizedBox(width: 60.0),
+                          Text(
+                            newsCategry.time,
+                            style: const TextStyle(fontSize: 11.0),
+                          )
                         ],
                       ),
-                      const SizedBox(width: 60.0),
-                      const Text(
-                        '8 min',
-                        style: TextStyle(fontSize: 11.0),
-                      )
-                    ],
-                  ),
-                  //
-                  const Padding(
-                    padding: EdgeInsets.symmetric(vertical: 10.0),
-                    child: Text(
-                      'Art that swipes through\nthe landscapes — Earthscape ...',
-                      style: TextStyle(
-                        fontSize: 13.0,
-                        fontWeight: FontWeight.bold,
+                      //
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 10.0),
+                        child: Text(
+                          newsCategry.text,
+                          style: const TextStyle(
+                            fontSize: 13.0,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
                       ),
-                    ),
-                  ),
-                  const Text(
-                    'Art & Illustration',
-                    style: TextStyle(fontSize: 13.0),
+                      Text(
+                        newsCategry.category,
+                        style: const TextStyle(fontSize: 13.0),
+                      ),
+                    ],
                   ),
                 ],
               ),
-            ],
-          ),
+            ),
+            Container(
+              height: 2.0,
+              width: double.infinity,
+              color: color1,
+            ),
+          ],
         ),
-        Container(
-          height: 2.0,
-          width: double.infinity,
-          color: color1,
-        ),
-      ],
+      ),
     );
   }
 }
@@ -359,7 +374,10 @@ class AppBar extends StatelessWidget {
             borderRadius: BorderRadius.circular(10.0),
             color: Colors.black45,
           ),
-          // child: ,
+          child: Image.asset(
+            'assets/images/Rectangle 7 (3).png',
+            fit: BoxFit.fill,
+          ),
         ),
         Container(
           padding: const EdgeInsets.all(10.0),
