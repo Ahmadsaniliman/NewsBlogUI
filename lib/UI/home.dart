@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:newsblogui/Constant/colors.dart';
+import 'package:newsblogui/Constant/routes.dart';
 import 'package:newsblogui/Model/model.dart';
 
 class HomePage extends StatelessWidget {
@@ -13,14 +14,31 @@ class HomePage extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 20.0),
         height: 50.0,
         width: double.infinity,
-        color: color1,
+        color: color1.withOpacity(0.4),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: const [
-            Icon(Icons.home),
-            Icon(Icons.favorite),
-            Icon(Icons.notifications),
-            Icon(Icons.person),
+          children: [
+            const Icon(
+              Icons.home,
+              color: Colors.black,
+            ),
+            GestureDetector(
+              onTap: () {
+                Navigator.of(context).pushNamed(detailsPageRoute);
+              },
+              child: const Icon(
+                Icons.favorite,
+                color: color1,
+              ),
+            ),
+            const Icon(
+              Icons.notifications,
+              color: color1,
+            ),
+            const Icon(
+              Icons.person,
+              color: color1,
+            ),
           ],
         ),
       ),
@@ -160,60 +178,58 @@ class NewsCardBelow extends StatelessWidget {
           height: 130.0,
           width: double.infinity,
           //   color: Colors.green,
-          child: Expanded(
-            child: Row(
-              children: [
-                Image.asset(
-                  newsCategry.image,
-                  //   width: 120,
-                ),
-                const SizedBox(width: 15.0),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Row(
-                          //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Image.asset(
-                              newsCategry.image1,
-                              width: 20.0,
-                            ),
-                            const SizedBox(width: 5.0),
-                            Text(
-                              newsCategry.name,
-                              style: const TextStyle(fontSize: 13.0),
-                            ),
-                          ],
-                        ),
-                        const SizedBox(width: 55.0),
-                        Text(
-                          newsCategry.time,
-                          style: const TextStyle(fontSize: 11.0),
-                        )
-                      ],
-                    ),
-                    //
-                    Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 10.0),
-                      child: Text(
-                        newsCategry.text,
-                        style: const TextStyle(
-                          fontSize: 13.0,
-                          fontWeight: FontWeight.bold,
-                        ),
+          child: Row(
+            children: [
+              Image.asset(
+                newsCategry.image,
+                //   width: 120,
+              ),
+              const SizedBox(width: 15.0),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Image.asset(
+                            newsCategry.image1,
+                            width: 20.0,
+                          ),
+                          const SizedBox(width: 5.0),
+                          Text(
+                            newsCategry.name,
+                            style: const TextStyle(fontSize: 13.0),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(width: 55.0),
+                      Text(
+                        newsCategry.time,
+                        style: const TextStyle(fontSize: 11.0),
+                      )
+                    ],
+                  ),
+                  //
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 10.0),
+                    child: Text(
+                      newsCategry.text,
+                      style: const TextStyle(
+                        fontSize: 13.0,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
-                    Text(
-                      newsCategry.category,
-                      style: const TextStyle(fontSize: 13.0),
-                    ),
-                  ],
-                ),
-              ],
-            ),
+                  ),
+                  Text(
+                    newsCategry.category,
+                    style: const TextStyle(fontSize: 13.0),
+                  ),
+                ],
+              ),
+            ],
           ),
         ),
         Container(

@@ -23,7 +23,7 @@ final List<Category> newCategory = [
     updates: '+ 99 updates',
   ),
   Category(
-    image1: 'assets/images/Vector (33).png',
+    image1: 'assets/images/Vector (34).png',
     image: 'assets/images/image 5.png',
     title: 'Food',
     updates: '+ 34 updates',
